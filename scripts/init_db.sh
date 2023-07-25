@@ -15,11 +15,11 @@ if ! [-x "$(command -v sqlx)"]; then
     exit 1
 fi
 
-DB_USER=${POSTGRES_USER:=root}
-DB_PASSWORD="${POSTGRES_PASSWORD:=root}"
+DB_USER=${POSTGRES_USER:=postgres}
+DB_PASSWORD="${POSTGRES_PASSWORD:=password}"
 DB_NAME="${POSTGRES_DB:=newsletter}"
 DB_PORT="${POSTGRES_PORT:=5432}"
-DB_POST="${POSTGRES_POST:=localhost}"
+DB_HOST="${POSTGRES_POST:=localhost}"
 
 docker run \
     -e POSTGRES_USER=${DB_USER} \
